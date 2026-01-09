@@ -132,6 +132,27 @@
     }
 
     /* Education section */
+
+    #edu-interests {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+    
+    #edu-interests h3 {
+      font-size: 1.8em;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    
+    /* Stack on mobile */
+    @media (max-width: 800px) {
+      #edu-interests {
+        grid-template-columns: 1fr;
+      }
+    }
     .education-item {
       margin-bottom: 20px;
     }
@@ -213,10 +234,13 @@
       <img src="images/profile.jpg">
       <div class="bio">
         <p>
-          I am a PhD student in the Department of Data Science at the New Jersey Institute of Technology (NJIT), advised by <a href="https://people.njit.edu/profile/mx6" target="_blank">Dr.&nbsp;Mengjia&nbsp;Xu</a> and a member of the <a href="https://gracexu182.github.io/" target="_blank">Xu&nbsp;Lab</a>. My research explores how <strong>hyperbolic geometry</strong>, <strong>state‑space models</strong>, and <strong>graph neural networks</strong> can be used to build efficient large language models and dynamic graph embeddings.
+          I am a second‑year PhD student in the Department of Data Science at the New Jersey Institute of Technology (NJIT), advised by <a href="https://people.njit.edu/profile/mx6" target="_blank">Dr.&nbsp;Mengjia&nbsp;Xu</a> and a member of the <a href="https://gracexu182.github.io/" target="_blank">Xu&nbsp;Lab</a>. My research explores how <strong>hyperbolic geometry</strong>, <strong>state‑space models</strong>, and <strong>graph neural networks</strong> can be used to build efficient large language models and dynamic graph embeddings.
         </p>
         <p>
           Recent work includes the <em>Hierarchical Mamba</em> framework, which combines efficient Mamba2 state‑space models with hyperbolic spaces to capture hierarchical relationships in language data, and a comparative study of <em>dynamic graph embedding</em> approaches using transformers and the Mamba architecture. In addition to these projects, I continue to develop <strong>hyperbolic models</strong> for other domains, exploring how curvature‑aware embeddings can benefit a wide range of applications. I was also involved in surveying, and organizing the rapidly growing body of work on hyperbolic large language models, which forms the basis of my recent survey accepted in SIAM Review.
+        </p>
+        <p>
+          Outside of research, I enjoy playing chess ♟️, hiking 🥾, exploring new cuisines 🍜🌍, and playing video games 🎮.
         </p>
       </div>
     </div>
@@ -278,45 +302,45 @@
       </div>
     </section>
 
-    <section id="education">
-      <h3>Education</h3>
-      <div class="education-item">
-        <h4>New Jersey Institute of Technology</h4>
-        <div class="edu-detail">Ph.D. in Data Science (2024 – Present)</div>
+    <section id="edu-interests">
+      <div id="education">
+        <h3>Education</h3>
+        <div class="education-item">
+          <h4>New Jersey Institute of Technology</h4>
+          <div class="edu-detail">Ph.D. in Data Science (2024 – Present)</div>
+        </div>
+        <div class="education-item">
+          <h4>University of Maryland, Baltimore County</h4>
+          <div class="edu-detail">Master of Professional Studies in Data Science (2021 – 2022)</div>
+        </div>
+        <div class="education-item">
+          <h4>Savitribai Phule Pune University, India</h4>
+          <div class="edu-detail">Bachelor of Engineering in Computer Engineering (2016 – 2020)</div>
+        </div>
       </div>
-      <div class="education-item">
-        <h4>University of Maryland, Baltimore County</h4>
-        <div class="edu-detail">Master of Professional Studies in Data Science (2021 – 2022)</div>
+      <div id="interests">
+        <h3>Experience</h3>
+        <!-- NJIT PhD role -->
+        <div class="experience-item">
+          <h4>Research Assistant, New&nbsp;Jersey Institute of Technology, NJ</h4>
+          <div class="exp-detail">September 2024 – Present</div>
+          </div>
+        <!-- Research assistant role at UMBC -->
+        <div class="experience-item">
+          <h4>Research Assistant, University of Maryland Baltimore County, MD</h4>
+          <div class="exp-detail">Jan 2022 – Dec 2022</div>
+          </div>
+        <!-- Data science intern role -->
+        <div class="experience-item">
+          <h4>Data Science Intern, CoReCo Technologies, Pune, India</h4>
+          <div class="exp-detail">Aug 2019 – Jun 2020</div>
+          </div>
+        <!-- Project intern role -->
+        <div class="experience-item">
+          <h4>Project Intern, Aalborg University, Copenhagen, Denmark</h4>
+          <div class="exp-detail">Jan 2018 – Feb 2018</div>
+        </div>
       </div>
-      <div class="education-item">
-        <h4>Savitribai Phule Pune University, India</h4>
-        <div class="edu-detail">Bachelor of Engineering in Computer Engineering (2016 – 2020)</div>
-      </div>
-    </section>
-
-    <!-- Experience section -->
-    <section id="experience">
-      <h3>Experience</h3>
-      <!-- NJIT PhD role -->
-      <div class="experience-item">
-        <h4>Research Assistant, New&nbsp;Jersey Institute of Technology, NJ</h4>
-        <div class="exp-detail">September 2024 – Present</div>
-        </div>
-      <!-- Research assistant role at UMBC -->
-      <div class="experience-item">
-        <h4>Research Assistant, University of Maryland Baltimore County, MD</h4>
-        <div class="exp-detail">Jan 2022 – Dec 2022</div>
-        </div>
-      <!-- Data science intern role -->
-      <div class="experience-item">
-        <h4>Data Science Intern, CoReCo Technologies, Pune, India</h4>
-        <div class="exp-detail">Aug 2019 – Jun 2020</div>
-        </div>
-      <!-- Project intern role -->
-      <div class="experience-item">
-        <h4>Project Intern, Aalborg University, Copenhagen, Denmark</h4>
-        <div class="exp-detail">Jan 2018 – Feb 2018</div>
-        </div>
     </section>
 
     <!-- Contact section -->
