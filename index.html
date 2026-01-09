@@ -1,161 +1,340 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Sarang's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarang Patil – PhD Student</title>
+  <style>
+    /* Basic page styling */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      background-color: #fafafa;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 5px;
+    }
+    header h2 {
+      font-size: 1.3em;
+      color: #666;
+      margin-top: 5px;
+    }
+    .contact {
+      margin-top: 15px;
+    }
+    .contact a {
+      color: #0066cc;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.95em;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    /* Profile section */
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .profile img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-right: 30px;
+    }
+    .profile .bio {
+      flex: 1;
+    }
+    .profile .bio p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Sarang Patil</h1>
-						<p><b> Graduate Research Assistant at University of Maryland Baltimore County </b></p>
-						<p><i> Actively looking for full-time job roles. Can start working immediately. </i></p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+    /* Section headings */
+    section {
+      margin-bottom: 60px;
+    }
+    section h3 {
+      font-size: 1.8em;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Portfolio</a>
-					</header>
+    /* Publication cards */
+    .pub {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .pub img {
+      /* Preserve aspect ratio while capping maximum width */
+      max-width: 240px;
+      width: 100%;
+      height: auto;
+      margin-right: 20px;
+      object-fit: contain;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Homepage</a></li>
-							<li><a href="career.html">Career History</a></li>
-							<li><a href="proj.html">About my projects</a></li>
-							<li><a href="contact.html">Contact Me</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/sarang-patil4/" class="icon brands alt fa-linkedin"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.facebook.com/profile.php?id=100083463864797" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="https://github.com/sarangp2402" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+    .pub img:hover {
+      transform: scale(1.05);
+    }
+    .pub .pub-info {
+      flex: 1;
+    }
+    .pub .pub-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+    .pub .pub-authors {
+      color: #555;
+      margin-bottom: 5px;
+      font-size: 0.95em;
+    }
+    .pub .pub-venue {
+      color: #777;
+      font-size: 0.9em;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .pub .pub-links a {
+      color: #0066cc;
+      text-decoration: none;
+      margin-right: 12px;
+      font-size: 0.9em;
+    }
+    .pub .pub-links a:hover {
+      text-decoration: underline;
+    }
+    .pub .pub-desc {
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
 
-				<!-- Main -->
-					<div id="main">
+    /* Education section */
+    .education-item {
+      margin-bottom: 20px;
+    }
+    .education-item h4 {
+      margin-bottom: 5px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    .education-item .edu-detail {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 5px;
+    }
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="#">About me</a></h2>
-									<p>I recently graduated with a Master's Degree in Data Science from the University of Maryland Baltimore County where I also worked as a Graduate Research Assistant. My domains of work and study are machine learning and data science. I am looking for full-time positions such as data scientist, data engineer, data analyst or machine learning engineer. I have experience in data science, machine learning and software development projects in research projects as well as industrial projects.</br>
-								</header>
-								<img src="images/portp2.jpg" width = '225' alt="" />
-							</article>
+    /* Experience section */
+    .experience-item {
+      margin-bottom: 20px;
+    }
+    .experience-item h4 {
+      margin-bottom: 5px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    .experience-item .exp-detail {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+    .experience-item p {
+      margin-bottom: 10px;
+      font-size: 0.95em;
+    }
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<h2>My Projects<br/></h2>
-									</header>
-									<a href="https://github.com/sarangp2402" class="image fit"><img src="images/github.png" alt="" /></a>
-									<p>I have various project works regarding Data Science and Machine Learning. Please click on below tab to check my projects on GitHub.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/sarangp2402" class="button">Sarang's Projects</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2>DAM'S Research Group<br /></h2>
-									</header>
-									<a href="https://damslabumbc.github.io/members/" class="image fit"><img src="images/dams.png" alt="" height='250' /></a>
-									<p>I am a member of DAM'S Research Group, in which I am currrently working on an upcoming research project. Please click the tab below to view our research group. </p>
-									<ul class="actions special">
-										<li><a href="https://damslabumbc.github.io/members/" class="button">DAM'S Research Group</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2>Resume/CV<br />
-									</header>
-									<a href="images/SarangPatilResume.pdf" class="image fit"><img src="images/Resume.png" alt="" /></a>
-									<ul class="actions special">
-										<li><a href="images/SarangPatilResume.pdf" class="button">Download Resume</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2>Notable Certifications</h2>
-									</header>
-									<a href="https://drive.google.com/drive/u/6/folders/1IB58h_VGuTEzeCKYZQjXGAO0WpsBxnd6" class="image fit"><img src="images/certified.png" height='350' alt="" /></a>
-									<ul class="actions special">
-										<li><a href="https://drive.google.com/drive/u/6/folders/1IB58h_VGuTEzeCKYZQjXGAO0WpsBxnd6" class="button">View Certificates</a></li>
-									</ul>
-								</article>
-							</section>
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid #ddd;
+      color: #777;
+      font-size: 0.85em;
+    }
 
-					</div>
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      .profile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile img {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        height: auto;
+      }
+      .pub {
+        flex-direction: column;
+      }
+      .pub img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Sarang Patil</h1>
+      <h2>PhD Student, Department of Data Science, New Jersey Institute of Technology</h2>
+      <div class="contact">
+        <a href="mailto:sp3463@njit.edu">Email</a> |
+        <a href="https://github.com/sarangp2402" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/sarang-patil4/" target="_blank">LinkedIn</a>
+      </div>
+    </header>
 
-		<!-- Footer -->
-					<footer id="footer">
-						<section class="posts">
-								<article>
-									<header>
-										<h2><center>LinkedIn Profile<br/></center></h2>
-									</header>
-									<center><a href="https://www.linkedin.com/in/sarang-patil4/"><img src="images/linked.png" width= 200 alt="" /></a></center>
-									<p>You can send me a connection request on LinkedIn. Please click on the tab below to redirect to my LinkedIn profile.</p>
-									<ul class="actions special">
-										<li><a href="https://www.linkedin.com/in/sarang-patil4/" class="button">Sarang's LinkedIn</a></li>
-									</ul>
-								</article>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Halethorpe, MD 21227</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">443-527-7295</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:sarangp2402@gmail.com">sarangp2402@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/sarang-patil4/" class="icon brands alt fa-linkedin"><span class="label">Twitter</span></a></li>
-									<li><a href="https://www.facebook.com/profile.php?id=100083463864797" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="https://github.com/sarangp2402" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+    <div class="profile">
+      <img src="images/profile.jpg">
+      <div class="bio">
+        <p>
+          I am a PhD student in the Department of Data Science &amp; Computer Science at the New Jersey Institute of Technology (NJIT), advised by <a href="https://people.njit.edu/profile/mx6" target="_blank">Dr.&nbsp;Mengjia&nbsp;Xu</a> and a member of the <a href="https://gracexu182.github.io/" target="_blank">Xu&nbsp;Lab</a>. My research explores how <strong>hyperbolic geometry</strong>, <strong>state‑space models</strong>, and <strong>graph neural networks</strong> can be used to build efficient large language models and dynamic graph embeddings.
+        </p>
+        <p>
+          Recent work includes the <em>Hierarchical Mamba</em> framework, which combines efficient Mamba2 state‑space models with hyperbolic spaces to capture hierarchical relationships in language data, and a comparative study of <em>dynamic graph embedding</em> approaches using transformers and the Mamba architecture. In addition to these projects, I continue to develop <strong>hyperbolic models</strong> for other domains, exploring how curvature‑aware embeddings can benefit a wide range of applications. I was also involved in surveying, and organizing the rapidly growing body of work on hyperbolic large language models, which forms the basis of my recent survey accepted in SIAM Review.
+        </p>
+      </div>
+    </div>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; 2022</li><li>Sarang Rajendra Patil </li></ul>
-					</div>
+    <section id="publications">
+      <h3>Selected Publications</h3>
 
-			</div>
+      <!-- Publication 1: Hyperbolic Large Language Models -->
+      <div class="pub">
+        <!-- Updated image with transparent background -->
+        <img src="images/hybrid_architecture.png">
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2509.05757" target="_blank">Hyperbolic Large Language Models</a> (2025)</div>
+          <div class="pub-authors"><strong>Sarang&nbsp;Patil</strong>, Zeyong&nbsp;Zhang, Yiran&nbsp;Huang, Tengfei&nbsp;Ma, Mengjia&nbsp;Xu</div>
+          <div class="pub-venue">SIAM&nbsp;Review (accepted, 2025)</div>
+          <div class="pub-desc">
+            Large language models excel at many tasks but often fail to capture the non‑Euclidean hierarchies present in real‑world data. This survey paper reviews recent progress on <em>Hyperbolic LLMs (HypLLMs)</em> and has been accepted for publication in the <em>SIAM&nbsp;Review</em>. It categorizes existing models into four groups—models using exponential/logarithmic maps, hyperbolic fine‑tuned models, fully hyperbolic models, and hyperbolic state‑space models—and discusses applications across language, vision and multimodal domains. A companion repository of papers, code and datasets is maintained on GitHub.
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2509.05757" target="_blank">[Paper]</a>
+            <a href="https://github.com/sarangp2402/Hyperbolic-LLM-Models" target="_blank">[Repository]</a>
+          </div>
+        </div>
+      </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <!-- Publication 2: Hierarchical Mamba Meets Hyperbolic Geometry -->
+      <div class="pub">
+        <!-- Updated image with transparent background -->
+        <img src="images/Embeddings.png">
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2505.18973" target="_blank">Hierarchical Mamba Meets Hyperbolic Geometry: A New Paradigm for Structured Language Embeddings</a> (2025)</div>
+          <div class="pub-authors"><strong>Sarang&nbsp;Patil</strong>, Ashish&nbsp;Parmanand&nbsp;Pandey, Ioannis&nbsp;Koutis, Mengjia&nbsp;Xu</div>
+          <div class="pub-venue">arXiv preprint, 2025</div>
+          <div class="pub-desc">
+            This work introduces the <em>Hierarchical Mamba (HiM)</em> model, which integrates efficient Mamba2 state‑space models with hyperbolic representations (Poincaré and Lorentz manifolds) to learn hierarchy‑aware language embeddings. HiM projects Mamba2 outputs into hyperbolic space with learnable curvature and hyperbolic loss functions, capturing relational distances across levels of a hierarchy. Experiments on linguistic and medical datasets show that HiM outperforms Euclidean baselines and highlights the trade‑offs between the Poincaré and Lorentz variants. Source code is available online.
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2505.18973" target="_blank">[Paper]</a>
+            <a href="https://github.com/BerryByte/HiM" target="_blank">[Code]</a>
+          </div>
+        </div>
+      </div>
 
-	</body>
+      <!-- Publication 3: Comparative Study on Dynamic Graph Embedding -->
+      <div class="pub">
+        <!-- Updated image with transparent background -->
+        <img src="images/DGMamba.png">
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2412.11293" target="_blank">A Comparative Study on Dynamic Graph Embedding based on Mamba and Transformers</a> (2024)</div>
+          <div class="pub-authors">Ashish&nbsp;Parmanand&nbsp;Pandey, Alan&nbsp;John&nbsp;Varghese, <strong>Sarang&nbsp;Patil</strong>, Mengjia&nbsp;Xu</div>
+          <div class="pub-venue">arXiv preprint, 2024</div>
+          <div class="pub-desc">
+            Dynamic graph embedding models aim to learn representations of time‑evolving networks. This paper compares transformer‑based approaches with the recently proposed Mamba state‑space architecture and introduces three new models: TransformerG2G augmented with graph convolutional networks, DG‑Mamba, and GDG‑Mamba. Experiments show that Mamba‑based models achieve similar or better link‑prediction accuracy than transformer models while scaling linearly with sequence length, making them more efficient for graphs with high temporal variability.
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2412.11293" target="_blank">[Paper]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h3>Education</h3>
+      <div class="education-item">
+        <h4>New Jersey Institute of Technology</h4>
+        <div class="edu-detail">Ph.D. in Data Science (2024 – Present)</div>
+      </div>
+      <div class="education-item">
+        <h4>University of Maryland, Baltimore County</h4>
+        <div class="edu-detail">Master of Professional Studies in Data Science (2021 – 2022)</div>
+      </div>
+      <div class="education-item">
+        <h4>Savitribai Phule Pune University, India</h4>
+        <div class="edu-detail">Bachelor of Engineering in Computer Engineering (2016 – 2020)</div>
+      </div>
+    </section>
+
+    <!-- Experience section -->
+    <section id="experience">
+      <h3>Experience</h3>
+      <!-- NJIT PhD role -->
+      <div class="experience-item">
+        <h4>Research Assistant, New&nbsp;Jersey Institute of Technology, NJ</h4>
+        <div class="exp-detail">September 2024 – Present</div>
+        </div>
+      <!-- Research assistant role at UMBC -->
+      <div class="experience-item">
+        <h4>Research Assistant, University of Maryland Baltimore County, MD</h4>
+        <div class="exp-detail">Jan 2022 – Dec 2022</div>
+        </div>
+      <!-- Data science intern role -->
+      <div class="experience-item">
+        <h4>Data Science Intern, CoReCo Technologies, Pune, India</h4>
+        <div class="exp-detail">Aug 2019 – Jun 2020</div>
+        </div>
+      <!-- Project intern role -->
+      <div class="experience-item">
+        <h4>Project Intern, Aalborg University, Copenhagen, Denmark</h4>
+        <div class="exp-detail">Jan 2018 – Feb 2018</div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>
+        <strong>Email:</strong> <a href="mailto:sp3463@njit.edu">sp3463@njit.edu</a><br>
+        <strong>Address:</strong> New&nbsp;Jersey&nbsp;Institute of Technology, Newark, NJ&nbsp;07102
+      </p>
+      <div style="width:100%;height:350px;margin-top:10px;">
+        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.18345,40.7415,-74.17345,40.7485&amp;layer=mapnik&amp;marker=40.7445,-74.17845"></iframe>
+        <small><a href="https://www.openstreetmap.org/?mlat=40.7445&amp;mlon=-74.17845#map=15/40.7445/-74.17845" target="_blank">View Larger Map</a></small>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 Sarang&nbsp;Patil 
+    </footer>
+  </div>
+</body>
 </html>
