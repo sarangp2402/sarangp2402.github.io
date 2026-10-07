@@ -266,6 +266,62 @@
       top: 0;
     }
 
+    /* Publication sub-groups, venue badges, equal-contribution note */
+    .pub-group {
+      font-size: 1.2em;
+      color: #2c3e50;
+      margin: 10px 0 20px 0;
+    }
+    .badge {
+      display: inline-block;
+      font-style: normal;
+      font-size: 0.8em;
+      font-weight: bold;
+      color: #fff;
+      background: #2c6e9b;
+      border-radius: 4px;
+      padding: 1px 7px;
+      margin-right: 6px;
+    }
+    .badge.preprint { background: #7a8794; }
+    .eq-note {
+      color: #777;
+      font-size: 0.85em;
+    }
+    .abstract-list li { margin-bottom: 8px; font-size: 0.95em; }
+
+    /* Talks & presentations */
+    .talk-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 25px 0;
+    }
+    .talk-list li {
+      margin-bottom: 14px;
+      padding-left: 14px;
+      border-left: 3px solid #d6dee8;
+    }
+    .talk-list .talk-date {
+      color: #666;
+      font-size: 0.9em;
+    }
+    .talk-list .talk-where {
+      color: #777;
+      font-style: italic;
+      font-size: 0.9em;
+    }
+    .upcoming-tag {
+      display: inline-block;
+      font-size: 0.75em;
+      font-weight: bold;
+      color: #8a5a00;
+      background: #fff3d6;
+      border: 1px solid #f0d28c;
+      border-radius: 4px;
+      padding: 0 6px;
+      margin-left: 6px;
+    }
+
 
     /* Footer */
     footer {
@@ -313,6 +369,7 @@
         <a href="#edu-interests">Education</a>
         <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
         <a href="#service">Reviews</a>
         <a href="#news">News</a>
         <a href="#contact">Contact</a>
@@ -328,7 +385,7 @@
         <a href="mailto:sp3463@njit.edu">Email</a> |
         <a href="https://github.com/sarangp2402" target="_blank" rel="noopener">GitHub</a> |
         <a href="https://www.linkedin.com/in/sarang-patil4/" target="_blank" rel="noopener">LinkedIn</a> |
-        <a href="https://scholar.google.com/citations?user=8Rnp8G8AAAAJ&hl=en&authuser=3" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://scholar.google.com/citations?user=8Rnp8G8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
       </div>
     </header>
 
@@ -336,19 +393,25 @@
       <img src="images/profile.jpg" alt="Profile photo">
       <div class="bio">
         <p>
-          I am a second-year PhD student in the Department of Data Science at the New&nbsp;Jersey Institute of Technology (NJIT), advised by
+          I am a third-year PhD student in the Department of Data Science at the New&nbsp;Jersey Institute of Technology (NJIT), advised by
           <a href="https://people.njit.edu/profile/mx6" target="_blank" rel="noopener">Dr.&nbsp;Mengjia&nbsp;Xu</a> and a member of the
           <a href="https://gracexu182.github.io/" target="_blank" rel="noopener">Xu&nbsp;Lab</a>. My research explores how
           <strong>hyperbolic geometry</strong>, <strong>state-space models</strong>, and <strong>graph neural networks</strong> can be used
           to build efficient large language models and dynamic graph embeddings.
         </p>
         <p>
-          Recent work includes the <em>Hierarchical&nbsp;Mamba</em> framework, which combines efficient Mamba2 state-space models with
-          hyperbolic spaces to capture hierarchical relationships in language data, and a comparative study of <em>dynamic&nbsp;graph
-          embedding</em> approaches using transformers and the Mamba architecture. In addition to these projects, I continue to develop
-          <strong>hyperbolic models</strong> for other domains, exploring how curvature-aware embeddings can benefit a wide range of
-          applications. I was also involved in surveying, and organizing the rapidly growing body of work on hyperbolic large language
-          models, which forms the basis of my recent survey accepted in SIAM Review.
+          My most recent work is <em>HyperForecast</em>, a long-term <strong>time-series forecasting</strong> framework that operates in
+          hyperbolic space. Earlier work includes the <em>Hierarchical&nbsp;Mamba (HiM)</em>
+          framework (published in <em>TMLR</em>, 2026), which combines efficient Mamba2 state-space models with hyperbolic spaces to
+          capture hierarchical relationships in language data, and a comparative study of <em>dynamic&nbsp;graph embedding</em>
+          approaches using transformers and the Mamba architecture. In addition to these projects, I continue to develop hyperbolic models 
+          for other domains, exploring how curvature-aware embeddings can benefit a wide range of applications. I was also involved in 
+          surveying, and organizing the rapidly growing body of work on hyperbolic large language models, which forms the basis of my
+          accepted survey paper in SIAM Review.
+        </p>
+        <p>
+          Beyond hyperbolic learning, I work on <strong>scientific machine learning</strong>: multiscale graph-wavelet compressed sensing
+          for physical simulation data, and machine-learning forecasting of solar active-region emergence with collaborators.
         </p>
         <p>
           Outside of research, I enjoy playing chess ♟️, hiking 🥾, exploring new cuisines 🍜🌍, and playing video games 🎮.
@@ -382,6 +445,7 @@
           <li>Large language models and hierarchy-aware embeddings</li>
           <li>Graph neural networks and dynamic graph embedding</li>
           <li>Curvature-aware optimization and geometric deep learning</li>
+          <li>Time-series forecasting and scientific machine learning</li>
         </ul>
       </div>
     </section>
@@ -411,19 +475,43 @@
       </div>
     </section>
 
-    <!-- Publications (unchanged content) -->
+    <!-- Publications -->
     <section id="publications">
       <h3>Publications</h3>
+      <h4 class="pub-group">Journal &amp; Conference Papers</h4>
 
-      <!-- Publication 1: Hyperbolic Large Language Models -->
+      <!-- Publication: Hierarchical Mamba Meets Hyperbolic Geometry (TMLR 2026) -->
+      <div class="pub">
+        <img src="images/Embeddings.png" alt="HiM diagram">
+        <div class="pub-info">
+          <div class="pub-title">
+            <a href="https://openreview.net/forum?id=a3g13FKzct" target="_blank" rel="noopener">Hierarchical&nbsp;Mamba Meets Hyperbolic Geometry: A New Paradigm for Structured Language Embeddings</a> (2026)
+          </div>
+          <div class="pub-authors"><strong>Sarang&nbsp;Patil</strong>, Ashish&nbsp;Parmanand&nbsp;Pandey, Ioannis&nbsp;Koutis, Mengjia&nbsp;Xu</div>
+          <div class="pub-venue"><span class="badge">TMLR</span>Transactions on Machine Learning Research, 2026</div>
+          <div class="pub-desc">
+            This work introduces the <em>Hierarchical&nbsp;Mamba (HiM)</em> model, which integrates efficient Mamba2 state-space models with
+            hyperbolic representations (Poincaré and Lorentz manifolds) to learn hierarchy-aware language embeddings. HiM projects Mamba2
+            outputs into hyperbolic space with learnable curvature and hyperbolic loss functions, capturing relational distances across
+            levels of a hierarchy. Experiments on linguistic and medical datasets show that HiM outperforms Euclidean baselines and
+            highlights the trade-offs between the Poincaré and Lorentz variants. Source code is available online.
+          </div>
+          <div class="pub-links">
+            <a href="https://openreview.net/forum?id=a3g13FKzct" target="_blank" rel="noopener">[Paper]</a>
+            <a href="https://github.com/BerryByte/HiM" target="_blank" rel="noopener">[Code]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publication: Hyperbolic Large Language Models (SIAM Review) -->
       <div class="pub">
         <img src="images/hybrid_architecture.png" alt="Hyperbolic LLM diagram">
         <div class="pub-info">
           <div class="pub-title">
-            <a href="https://arxiv.org/abs/2509.05757" target="_blank" rel="noopener">Hyperbolic Large Language Models</a> (2025)
+            <a href="https://arxiv.org/abs/2509.05757" target="_blank" rel="noopener">Hyperbolic Large Language Models</a> (2026)
           </div>
           <div class="pub-authors"><strong>Sarang&nbsp;Patil</strong>, Zeyong&nbsp;Zhang, Yiran&nbsp;Huang, Tengfei&nbsp;Ma, Mengjia&nbsp;Xu</div>
-          <div class="pub-venue">SIAM&nbsp;Review (accepted, 2025)</div>
+          <div class="pub-venue"><span class="badge">SIAM Review</span>SIAM&nbsp;Review (accepted, to appear)</div>
           <div class="pub-desc">
             Large language models excel at many tasks but often fail to capture the non-Euclidean hierarchies present in real-world data.
             This survey paper reviews recent progress on <em>Hyperbolic&nbsp;LLMs (HypLLMs)</em> and has been accepted for publication in the
@@ -438,50 +526,104 @@
         </div>
       </div>
 
-      <!-- Publication 2: Hierarchical Mamba Meets Hyperbolic Geometry -->
+      <!-- Publication: Multilevel Graph Wavelet Compressed Sensing (SDM 2026) -->
       <div class="pub">
-        <img src="images/Embeddings.png" alt="HiM diagram">
+        <img src="images/gwcs.png" alt="Graph Wavelet Compressed Sensing pipeline">
         <div class="pub-info">
           <div class="pub-title">
-            <a href="https://arxiv.org/abs/2505.18973" target="_blank" rel="noopener">Hierarchical&nbsp;Mamba Meets Hyperbolic Geometry: A New Paradigm for Structured Language Embeddings</a> (2025)
+            <a href="https://openreview.net/forum?id=JDlHn6Njzm" target="_blank" rel="noopener">Multilevel Graph Wavelet Compressed Sensing with Scale-Aware Neural Recovery</a> (2026)
           </div>
-          <div class="pub-authors"><strong>Sarang&nbsp;Patil</strong>, Ashish&nbsp;Parmanand&nbsp;Pandey, Ioannis&nbsp;Koutis, Mengjia&nbsp;Xu</div>
-          <div class="pub-venue">arXiv preprint, 2025</div>
+          <div class="pub-authors">Amirhossein&nbsp;Nouranizadeh*, <strong>Sarang&nbsp;Patil</strong>*, Alan&nbsp;John&nbsp;Varghese, Varsha&nbsp;Narayanan, Amit&nbsp;Chakraborty, Mengjia&nbsp;Xu <span class="eq-note">(*equal contribution)</span></div>
+          <div class="pub-venue"><span class="badge">SDM 2026</span>SIAM International Conference on Data Mining (SDM), 2026</div>
           <div class="pub-desc">
-            This work introduces the <em>Hierarchical&nbsp;Mamba (HiM)</em> model, which integrates efficient Mamba2 state-space models with
-            hyperbolic representations (Poincaré and Lorentz manifolds) to learn hierarchy-aware language embeddings. HiM projects Mamba2
-            outputs into hyperbolic space with learnable curvature and hyperbolic loss functions, capturing relational distances across
-            levels of a hierarchy. Experiments on linguistic and medical datasets show that HiM outperforms Euclidean baselines and
-            highlights the trade-offs between the Poincaré and Lorentz variants. Source code is available online.
+            Training scientific machine learning models such as neural operators requires large volumes of simulated data, which makes
+            data preparation and storage expensive. This paper proposes <em>Graph Wavelet Compressed Sensing (GWCS)</em>, a learning-based
+            framework that compresses graph signals offline into sparse, interpretable wavelet-domain representations using the spectral
+            graph wavelet transform, multilevel importance sampling, and a neural inverse graph wavelet transform for scale-aware recovery.
           </div>
           <div class="pub-links">
-            <a href="https://arxiv.org/abs/2505.18973" target="_blank" rel="noopener">[Paper]</a>
-            <a href="https://github.com/BerryByte/HiM" target="_blank" rel="noopener">[Code]</a>
+            <a href="https://openreview.net/forum?id=JDlHn6Njzm" target="_blank" rel="noopener">[Paper]</a>
+            <a href="https://github.com/amrhssn/gwcs" target="_blank" rel="noopener">[Code]</a>
           </div>
         </div>
       </div>
 
-      <!-- Publication 3: Comparative Study on Dynamic Graph Embedding -->
+      <!-- Publication: HypEHR (Findings of ACL 2026) -->
       <div class="pub">
-        <img src="images/DGMamba.png" alt="Dynamic graph embedding diagram">
+        <img src="images/hypehr.png" alt="HypEHR architecture">
         <div class="pub-info">
           <div class="pub-title">
-            <a href="https://arxiv.org/abs/2412.11293" target="_blank" rel="noopener">A Comparative Study on Dynamic&nbsp;Graph&nbsp;Embedding based on Mamba and Transformers</a> (2024)
+            <a href="https://aclanthology.org/2026.findings-acl.527/" target="_blank" rel="noopener">HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering</a> (2026)
           </div>
-          <div class="pub-authors">Ashish&nbsp;Parmanand&nbsp;Pandey, Alan&nbsp;John&nbsp;Varghese, <strong>Sarang&nbsp;Patil</strong>, Mengjia&nbsp;Xu</div>
-          <div class="pub-venue">arXiv preprint, 2024</div>
+          <div class="pub-authors">Yuyu&nbsp;Liu, <strong>Sarang&nbsp;Patil</strong>, Mengjia&nbsp;Xu, Tengfei&nbsp;Ma</div>
+          <div class="pub-venue"><span class="badge">ACL 2026</span>Findings of the Association for Computational Linguistics: ACL 2026, pp.&nbsp;10849–10862</div>
           <div class="pub-desc">
-            Dynamic graph embedding models aim to learn representations of time-evolving networks. This paper compares transformer-based
-            approaches with the recently proposed Mamba state-space architecture and introduces three new models: TransformerG2G augmented
-            with graph convolutional networks, DG-Mamba, and GDG-Mamba. Experiments show that Mamba-based models achieve similar or better
-            link-prediction accuracy than transformer models while scaling linearly with sequence length, making them more efficient for
-            graphs with high temporal variability.
+            EHR question answering usually relies on costly LLM pipelines that ignore the tree-like organization of clinical data.
+            <em>HypEHR</em> is a compact model that embeds medical codes, visits and questions in hyperbolic (Lorentz) space, pretrained on
+            next-visit diagnosis prediction with ICD-aligned hierarchy regularization. On MIMIC-IV EHR-QA benchmarks it approaches the
+            performance of LLM-based methods with far fewer parameters.
           </div>
           <div class="pub-links">
-            <a href="https://arxiv.org/abs/2412.11293" target="_blank" rel="noopener">[Paper]</a>
+            <a href="https://aclanthology.org/2026.findings-acl.527.pdf" target="_blank" rel="noopener">[Paper]</a>
+            <a href="https://arxiv.org/abs/2604.21027" target="_blank" rel="noopener">[arXiv]</a>
           </div>
         </div>
       </div>
+
+      <!-- Publication: Forecasting Continuum Intensity (JGR: MLC 2026) -->
+      <div class="pub">
+        <img src="images/jgr_transformer.png" alt="Transformer pipeline for continuum intensity forecasting">
+        <div class="pub-info">
+          <div class="pub-title">
+            <a href="https://doi.org/10.1029/2025JH001207" target="_blank" rel="noopener">Forecasting Continuum Intensity for Solar Active Region Emergence Prediction Using Transformers</a> (2026)
+          </div>
+          <div class="pub-authors">Jonas&nbsp;Tirona, <strong>Sarang&nbsp;Patil</strong>, Spiridon&nbsp;Kasapis, Eren&nbsp;Dogan, John&nbsp;T.&nbsp;Stefan, Irina&nbsp;N.&nbsp;Kitiashvili, Alexander&nbsp;G.&nbsp;Kosovichev, Mengjia&nbsp;Xu</div>
+          <div class="pub-venue"><span class="badge">JGR: MLC</span>Journal of Geophysical Research: Machine Learning and Computation, 3(4), e2025JH001207, 2026</div>
+          <div class="pub-desc">
+            A transformer-based model that detects faint precursor signals of solar active-region emergence in helioseismic acoustic-power
+            and magnetic-flux data from NASA's Solar Dynamics Observatory, forecasting emergence on average about 9 hours in advance and
+            outperforming a standard transformer and a previous benchmark. The work was featured in NJIT News.
+          </div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1029/2025JH001207" target="_blank" rel="noopener">[Paper]</a>
+            <a href="https://news.njit.edu/new-ai-model-detects-hidden-signs-solar-eruptions-hours-they-emerge" target="_blank" rel="noopener">[NJIT News]</a>
+          </div>
+        </div>
+      </div>
+
+    <!-- Talks & Presentations -->
+    <section id="talks">
+      <h3>Talks &amp; Presentations</h3>
+
+      <p><strong>Upcoming</strong></p>
+      <ul class="talk-list">
+        <li>
+          <span class="talk-date">October 23–25, 2026</span><span class="upcoming-tag">Upcoming</span><br>
+          <strong>Minisymposium talk:</strong> Hyperbolic Time Series Forecasting with Learnable Decomposition and Manifold Dynamics<br>
+          <span class="talk-where">Minisymposium “Geometry for Modern AI: Representations, Reasoning, and Learning on Structured Manifolds”,
+          SIAM New York–New Jersey–Pennsylvania Section Annual Meeting 2026, Rutgers University, New Brunswick, NJ</span>
+        </li>
+        <li>
+          <span class="talk-date">November 19–20, 2026</span><span class="upcoming-tag">Upcoming</span><br>
+          <strong>Oral presentation:</strong> Multilevel Graph Wavelet Compressed Sensing with Scale-Aware Neural Recovery<br>
+          <span class="talk-where">SIAM International Conference on Data Mining (SDM26), Salt Palace Convention Center, Salt Lake City, UT</span>
+        </li>
+      </ul>
+
+      <p><strong>Past</strong></p>
+      <ul class="talk-list">
+        <li>
+          <span class="talk-date">May 9, 2026</span><br>
+          <strong>Poster:</strong> Hierarchical Mamba Meets Hyperbolic Geometry (HiM)<br>
+          <span class="talk-where">ICERM Hot Topics Workshop “Agentic Scientific Computing and Scientific Machine Learning”,
+          Brown University, Providence, RI</span>
+        </li>
+        <li>
+          <span class="talk-date">March 26, 2026</span><br>
+          <strong>Digital poster:</strong> Hierarchical Mamba Meets Hyperbolic Geometry (HiM)<br>
+          <span class="talk-where">NJIT AI Exploration Day Student Showcase — “Shaping the Future: AI, Technology, and Society”, Newark, NJ</span>
+        </li>
+      </ul>
     </section>
 
     <!-- Reviews (Academic Service) -->
@@ -489,9 +631,12 @@
       <h3>Academic Service</h3>
       <p><strong>Reviewer:</strong></p>
       <ul>
-        <li><strong>Journal:</strong> IEEE Transactions on Knowledge and Data Engineering (TKDE)</li>
-        <li><strong>Journal:</strong> Advances in Space Research (ASR)</li>
-        <li><strong>Conference:</strong> Association for Computational Linguistics (ACL)</li>
+        <li><strong>Journal:</strong> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2026</li>
+        <li><strong>Journal:</strong> IEEE Transactions on Knowledge and Data Engineering (TKDE), 2025</li>
+        <li><strong>Journal:</strong> Advances in Space Research (ASR), 2025</li>
+        <li><strong>Conference:</strong> International Conference on Learning Representations (ICLR), 2027</li>
+        <li><strong>Conference:</strong> IEEE International Conference on Systems, Man, and Cybernetics (SMC), 2026</li>
+        <li><strong>Conference:</strong> Association for Computational Linguistics (ACL Rolling Review), 2025</li>
       </ul>
     </section>
 
@@ -499,8 +644,16 @@
     <section id="news" class="news-block">
       <h3>News</h3>
         <ul>
-          <li><span class="news-date">March 26, 2026 (upcoming):</span> Will be presenting at AI Exploration Day HiM paper</li>
-          <li><span class="news-date">November 24, 2025:</span> Paper accepted in SIAM Review</li>
+          <li><span class="news-date">November 19–20, 2026 (upcoming):</span> Will be presenting our Graph Wavelet Compressed Sensing (GWCS) paper at SIAM SDM 2026 in Salt Lake City, Utah</li>
+          <li><span class="news-date">October 26, 2026 (upcoming):</span> PhD proposal defense</li>
+          <li><span class="news-date">October 23–25, 2026 (upcoming):</span> Invited talk at the SIAM NY–NJ–PA Section Annual Meeting 2026 (Rutgers University), in the minisymposium “Geometry for Modern AI”</li>
+          <li><span class="news-date">August 14, 2026:</span> Solar active-region emergence forecasting paper published in <em>JGR: Machine Learning and Computation</em> and featured in <a href="https://news.njit.edu/new-ai-model-detects-hidden-signs-solar-eruptions-hours-they-emerge" target="_blank" rel="noopener">NJIT News</a></li>
+          <li><span class="news-date">July 11, 2026:</span> Graph Wavelet Compressed Sensing (GWCS) paper accepted at SIAM SDM 2026 (co-first author)</li>
+          <li><span class="news-date">May 9, 2026:</span> Presented a HiM poster at the ICERM Hot Topics Workshop on Agentic Scientific Computing and Scientific Machine Learning (Brown University)</li>
+          <li><span class="news-date">April 7, 2026:</span> HypEHR paper accepted to Findings of ACL 2026</li>
+          <li><span class="news-date">March 26, 2026:</span> Presented the HiM paper at NJIT AI Exploration Day (Student Showcase)</li>
+          <li><span class="news-date">March 21, 2026:</span> Hierarchical Mamba (HiM) paper accepted in <em>Transactions on Machine Learning Research (TMLR)</em></li>
+          <li><span class="news-date">November 24, 2025:</span> Hyperbolic Large Language Models paper accepted in SIAM Review</li>
           <li><span class="news-date">October 27, 2025:</span> Presented Hyperbolic Mamba paper at YWCC PhD Student Research Sharing Forum</li>
           <li><span class="news-date">October 20, 2025:</span> Passed my PhD qualifying exam</li>
         </ul>
