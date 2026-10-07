@@ -289,7 +289,13 @@
       font-size: 0.85em;
     }
     .abstract-list li { margin-bottom: 8px; font-size: 0.95em; }
-
+    /* Publication topics */
+    .topic-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: -5px 0 30px 0; }
+    .topic-nav a { font-size: 0.85em; color: #2c3e50; background: #eef3f8; border: 1px solid #d6dee8;
+                   border-radius: 14px; padding: 3px 12px; text-decoration: none; }
+    .topic-nav a:hover { background: #e1e9f2; }
+    .pub-topic { border-left: 4px solid #2c6e9b; padding-left: 10px; margin-top: 35px; scroll-margin-top: 80px; }
+    .topic-desc { color: #666; font-size: 0.92em; margin: -12px 0 25px 14px; }
     /* Talks & presentations */
     .talk-list {
       list-style: none;
@@ -503,6 +509,42 @@
         </div>
       </div>
 
+    <!-- Publications -->
+    <section id="publications">
+      <h3>Publications</h3>
+      <div class="topic-nav">
+        <a href="#topic-hyperbolic">Hyperbolic Representation Learning &amp; LLMs</a>
+        <a href="#topic-sciml">Scientific Machine Learning</a>
+        <a href="#topic-solar">Machine Learning for Solar Physics</a>
+      </div>
+
+      <!-- ===== Topic 1: Hyperbolic Representation Learning & LLMs ===== -->
+      <h4 class="pub-group pub-topic" id="topic-hyperbolic">Hyperbolic Representation Learning &amp; LLMs</h4>
+      <p class="topic-desc">Hierarchy-aware embeddings, state-space models and large language models in hyperbolic space.</p>
+
+      <!-- Publication: Hierarchical Mamba Meets Hyperbolic Geometry (TMLR 2026) -->
+      <div class="pub">
+        <img src="images/Embeddings.png" alt="HiM diagram">
+        <div class="pub-info">
+          <div class="pub-title">
+            <a href="https://openreview.net/forum?id=a3g13FKzct" target="_blank" rel="noopener">Hierarchical&nbsp;Mamba Meets Hyperbolic Geometry: A New Paradigm for Structured Language Embeddings</a> (2026)
+          </div>
+          <div class="pub-authors"><strong>Sarang&nbsp;Patil</strong>, Ashish&nbsp;Parmanand&nbsp;Pandey, Ioannis&nbsp;Koutis, Mengjia&nbsp;Xu</div>
+          <div class="pub-venue"><span class="badge">TMLR</span>Transactions on Machine Learning Research, 2026</div>
+          <div class="pub-desc">
+            This work introduces the <em>Hierarchical&nbsp;Mamba (HiM)</em> model, which integrates efficient Mamba2 state-space models with
+            hyperbolic representations (Poincaré and Lorentz manifolds) to learn hierarchy-aware language embeddings. HiM projects Mamba2
+            outputs into hyperbolic space with learnable curvature and hyperbolic loss functions, capturing relational distances across
+            levels of a hierarchy. Experiments on linguistic and medical datasets show that HiM outperforms Euclidean baselines and
+            highlights the trade-offs between the Poincaré and Lorentz variants. Source code is available online.
+          </div>
+          <div class="pub-links">
+            <a href="https://openreview.net/forum?id=a3g13FKzct" target="_blank" rel="noopener">[Paper]</a>
+            <a href="https://github.com/BerryByte/HiM" target="_blank" rel="noopener">[Code]</a>
+          </div>
+        </div>
+      </div>
+
       <!-- Publication: Hyperbolic Large Language Models (SIAM Review) -->
       <div class="pub">
         <img src="images/hybrid_architecture.png" alt="Hyperbolic LLM diagram">
@@ -522,28 +564,6 @@
           <div class="pub-links">
             <a href="https://arxiv.org/abs/2509.05757" target="_blank" rel="noopener">[Paper]</a>
             <a href="https://github.com/sarangp2402/Hyperbolic-LLM-Models" target="_blank" rel="noopener">[Repository]</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Publication: Multilevel Graph Wavelet Compressed Sensing (SDM 2026) -->
-      <div class="pub">
-        <img src="images/gwcs.png" alt="Graph Wavelet Compressed Sensing pipeline">
-        <div class="pub-info">
-          <div class="pub-title">
-            <a href="https://openreview.net/forum?id=JDlHn6Njzm" target="_blank" rel="noopener">Multilevel Graph Wavelet Compressed Sensing with Scale-Aware Neural Recovery</a> (2026)
-          </div>
-          <div class="pub-authors">Amirhossein&nbsp;Nouranizadeh*, <strong>Sarang&nbsp;Patil</strong>*, Alan&nbsp;John&nbsp;Varghese, Varsha&nbsp;Narayanan, Amit&nbsp;Chakraborty, Mengjia&nbsp;Xu <span class="eq-note">(*equal contribution)</span></div>
-          <div class="pub-venue"><span class="badge">SDM 2026</span>SIAM International Conference on Data Mining (SDM), 2026</div>
-          <div class="pub-desc">
-            Training scientific machine learning models such as neural operators requires large volumes of simulated data, which makes
-            data preparation and storage expensive. This paper proposes <em>Graph Wavelet Compressed Sensing (GWCS)</em>, a learning-based
-            framework that compresses graph signals offline into sparse, interpretable wavelet-domain representations using the spectral
-            graph wavelet transform, multilevel importance sampling, and a neural inverse graph wavelet transform for scale-aware recovery.
-          </div>
-          <div class="pub-links">
-            <a href="https://openreview.net/forum?id=JDlHn6Njzm" target="_blank" rel="noopener">[Paper]</a>
-            <a href="https://github.com/amrhssn/gwcs" target="_blank" rel="noopener">[Code]</a>
           </div>
         </div>
       </div>
@@ -569,6 +589,36 @@
           </div>
         </div>
       </div>
+
+      <!-- ===== Topic 2: Scientific Machine Learning ===== -->
+      <h4 class="pub-group pub-topic" id="topic-sciml">Scientific Machine Learning</h4>
+      <p class="topic-desc">Learning-based compression and recovery of graph-structured scientific simulation data.</p>
+
+      <!-- Publication: Multilevel Graph Wavelet Compressed Sensing (SDM 2026) -->
+      <div class="pub">
+        <img src="images/gwcs.png" alt="Graph Wavelet Compressed Sensing pipeline">
+        <div class="pub-info">
+          <div class="pub-title">
+            <a href="https://openreview.net/forum?id=JDlHn6Njzm" target="_blank" rel="noopener">Multilevel Graph Wavelet Compressed Sensing with Scale-Aware Neural Recovery</a> (2026)
+          </div>
+          <div class="pub-authors">Amirhossein&nbsp;Nouranizadeh*, <strong>Sarang&nbsp;Patil</strong>*, Alan&nbsp;John&nbsp;Varghese, Varsha&nbsp;Narayanan, Amit&nbsp;Chakraborty, Mengjia&nbsp;Xu <span class="eq-note">(*equal contribution)</span></div>
+          <div class="pub-venue"><span class="badge">SDM 2026</span>SIAM International Conference on Data Mining (SDM), 2026</div>
+          <div class="pub-desc">
+            Training scientific machine learning models such as neural operators requires large volumes of simulated data, which makes
+            data preparation and storage expensive. This paper proposes <em>Graph Wavelet Compressed Sensing (GWCS)</em>, a learning-based
+            framework that compresses graph signals offline into sparse, interpretable wavelet-domain representations using the spectral
+            graph wavelet transform, multilevel importance sampling, and a neural inverse graph wavelet transform for scale-aware recovery.
+          </div>
+          <div class="pub-links">
+            <a href="https://openreview.net/forum?id=JDlHn6Njzm" target="_blank" rel="noopener">[Paper]</a>
+            <a href="https://github.com/amrhssn/gwcs" target="_blank" rel="noopener">[Code]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Topic 3: Machine Learning for Solar Physics ===== -->
+      <h4 class="pub-group pub-topic" id="topic-solar">Machine Learning for Solar Physics</h4>
+      <p class="topic-desc">Datasets and deep-learning models for forecasting solar active-region emergence from NASA SDO/HMI observations.</p>
 
       <!-- Publication: Forecasting Continuum Intensity (JGR: MLC 2026) -->
       <div class="pub">
@@ -611,7 +661,7 @@
           </div>
         </div>
       </div>
-
+    </section>
     <!-- Talks & Presentations -->
     <section id="talks">
       <h3>Talks &amp; Presentations</h3>
