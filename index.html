@@ -648,7 +648,7 @@
         <li>
           <span class="talk-date">October 23–25, 2026</span><span class="upcoming-tag">Upcoming</span><br>
           <strong>Oral presentation:</strong> Hyperbolic Time Series Forecasting with Learnable Decomposition and Manifold Dynamics<br>
-          <span class="talk-where"><a href="https://siamnnp2026.sciencesconf.org/" target="_blank" rel="noopener">SIAM NY–NJ–PA (NNP26)</a>, Rutgers University, New Brunswick, NJ</span>
+          <span class="talk-where">Minisymposium “Geometry for Modern AI: Representations, Reasoning, and Learning on Structured Manifolds,” <a href="https://siamnnp2026.sciencesconf.org/" target="_blank" rel="noopener">SIAM NY–NJ–PA Annual Meeting 2026 (NNP26)</a>, Rutgers University, New Brunswick, NJ</span>
         </li>
       </ul>
 
@@ -715,8 +715,21 @@
     </section>
 
     <footer>
-      &copy; 2026 Sarang&nbsp;Patil
+      &copy; 2026 Sarang&nbsp;Patil<span id="visitor-count"></span>
     </footer>
   </div>
+
+  <!-- GoatCounter: privacy-friendly visitor analytics (dashboard: https://sarangp2402.goatcounter.com) -->
+  <script data-goatcounter="https://sarangp2402.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <!-- Show total page views in the footer -->
+  <script>
+    fetch('https://sarangp2402.goatcounter.com/counter/TOTAL.json')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        document.getElementById('visitor-count').textContent = ' · ' + d.count + ' visits';
+      })
+      .catch(function () {});
+  </script>
 </body>
 </html>
