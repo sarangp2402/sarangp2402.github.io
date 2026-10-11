@@ -724,7 +724,7 @@
           async src="//gc.zgo.at/count.js"></script>
   <!-- Show total page views in the footer -->
   <script>
-    fetch('https://sarangp2402.goatcounter.com/counter/TOTAL.json')
+    fetch('https://sarangp2402.goatcounter.com/counter/TOTAL.json?start=2026-10-01')
       .then(function (r) { return r.json(); })
       .then(function (d) {
         document.getElementById('visitor-count').textContent = ' · ' + d.count + ' visits';
