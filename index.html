@@ -338,6 +338,14 @@
       font-size: 0.85em;
     }
 
+    /* Tablet: keep nav on one line and photo aligned with bio */
+    @media (min-width: 701px) and (max-width: 900px) {
+      .topbar-inner { padding: 10px 20px; }
+      .topbar nav { gap: 2px; flex-wrap: nowrap; }
+      .topbar nav a { font-size: 0.9em; padding: 6px 6px; white-space: nowrap; }
+      .profile { align-items: flex-start; }
+    }
+
     /* Responsive adjustments */
     @media (max-width: 700px) {
       .topbar-inner { padding: 10px 16px; }
@@ -361,6 +369,59 @@
         margin-right: 0;
         margin-bottom: 10px;
       }
+
+      /* Mobile: compact sticky header — name on top, one swipeable row of links */
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        padding: 8px 0 6px 0;
+      }
+      .topbar .name { padding: 0 16px; font-size: 1.05em; }
+      .topbar nav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 2px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0 10px;
+        -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
+                mask-image: linear-gradient(to right, #000 88%, transparent);
+      }
+      .topbar nav::-webkit-scrollbar { display: none; }
+      .topbar nav a { white-space: nowrap; flex-shrink: 0; padding: 6px 8px; }
+      section, #top { scroll-margin-top: 90px; }
+
+      /* Mobile: header */
+      header { margin-bottom: 28px; }
+      header h1 { font-size: 2.1em; margin-top: 10px; }
+      header h2 { font-size: 1.05em; line-height: 1.45; }
+      .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 0; }
+      .contact a { white-space: nowrap; margin: 0 8px; }
+
+      /* Mobile: profile photo as a centered portrait instead of full-bleed */
+      .profile { align-items: center; margin-bottom: 36px; }
+      .profile img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      .profile .bio p { text-align: left; }
+
+      /* Mobile: tighter sections and headings */
+      section, #edu-interests { margin-bottom: 40px; }
+      #edu-interests { gap: 10px; }
+      section h3, #edu-interests h3 { font-size: 1.45em; margin-bottom: 18px; }
+      .pub { margin-bottom: 32px; }
+      .pub img { max-width: 100%; }
+      .pub img:hover { transform: none; }
+      .pub-info, .bio, .news-block li, .talk-list li { overflow-wrap: break-word; }
+      .topic-desc { margin-left: 0; }
+      .pub-topic { margin-top: 25px; }
+      .talk-list li { padding-left: 12px; }
+      .news-block li { padding-left: 26px; }
     }
   </style>
 </head>
@@ -386,7 +447,7 @@
   <div class="container" id="top">
     <header>
       <h1>Sarang Patil</h1>
-      <h2>PhD Student, Department of Data Science, New Jersey Institute of Technology</h2>
+      <h2>PhD Candidate, Department of Data Science, New Jersey Institute of Technology</h2>
       <div class="contact">
         <a href="mailto:sp3463@njit.edu">Email</a> |
         <a href="https://github.com/sarangp2402" target="_blank" rel="noopener">GitHub</a> |
@@ -399,14 +460,14 @@
       <img src="images/profile.jpg" alt="Profile photo">
       <div class="bio">
         <p>
-          I am a third-year PhD student in the Department of Data Science at the New&nbsp;Jersey Institute of Technology (NJIT), advised by
+          I am a third-year PhD candidate in the Department of Data Science at the New&nbsp;Jersey Institute of Technology (NJIT), advised by
           <a href="https://people.njit.edu/profile/mx6" target="_blank" rel="noopener">Dr.&nbsp;Mengjia&nbsp;Xu</a> and a member of the
           <a href="https://gracexu182.github.io/" target="_blank" rel="noopener">Xu&nbsp;Lab</a>. My research explores how
           <strong>hyperbolic geometry</strong>, <strong>state-space models</strong>, and <strong>graph neural networks</strong> can be used
           to build efficient large language models and dynamic graph embeddings.
         </p>
         <p>
-          My most recent work is <em>HyperForecast</em> (under review at ICLR&nbsp;2027), a long-term <strong>time-series forecasting</strong> framework that operates in
+          My most recent work is <a href="https://arxiv.org/abs/2610.15760" target="_blank" rel="noopener"><em>HyperForecast</em></a> (under review at ICLR&nbsp;2027), a long-term <strong>time-series forecasting</strong> framework that operates in
           hyperbolic space. Earlier work includes the <em>Hierarchical&nbsp;Mamba (HiM)</em>
           framework (published in <em>TMLR</em>, 2026), which combines efficient Mamba2 state-space models with hyperbolic spaces to
           capture hierarchical relationships in language data, and a comparative study of <em>dynamic&nbsp;graph embedding</em>
@@ -645,15 +706,15 @@
           <strong>Oral presentation:</strong> Multilevel Graph Wavelet Compressed Sensing with Scale-Aware Neural Recovery<br>
           <span class="talk-where"><a href="https://www.siam.org/conferences-events/siam-conferences/sdm26/" target="_blank" rel="noopener">SIAM International Conference on Data Mining (SDM26)</a>, Salt Palace Convention Center, Salt Lake City, UT</span>
         </li>
-        <li>
-          <span class="talk-date">October 23–25, 2026</span><span class="upcoming-tag">Upcoming</span><br>
-          <strong>Oral presentation:</strong> Hyperbolic Time Series Forecasting with Learnable Decomposition and Manifold Dynamics<br>
-          <span class="talk-where"><a href="https://siamnnp2026.sciencesconf.org/" target="_blank" rel="noopener">SIAM NY–NJ–PA (NNP26)</a>, Rutgers University, New Brunswick, NJ</span>
-        </li>
       </ul>
 
       <p><strong>Past</strong></p>
       <ul class="talk-list">
+        <li>
+          <span class="talk-date">October 24, 2026</span><br>
+          <strong>Oral presentation:</strong> <a href="https://arxiv.org/abs/2610.15760" target="_blank" rel="noopener">Hyperbolic Time Series Forecasting with Learnable Decomposition and Manifold Dynamics</a><br>
+          <span class="talk-where"><a href="https://siamnnp2026.sciencesconf.org/" target="_blank" rel="noopener">SIAM NY–NJ–PA (NNP26)</a>, Rutgers University, New Brunswick, NJ</span>
+        </li>
         <li>
           <span class="talk-date">May 9, 2026</span><br>
           <strong>Poster:</strong> Hierarchical Mamba Meets Hyperbolic Geometry (HiM)<br>
@@ -690,8 +751,10 @@
       <h3>News</h3>
         <ul>
           <li><span class="news-date">Nov. 19–20, 2026:</span> Presenting our <a href="https://openreview.net/forum?id=JDlHn6Njzm" target="_blank" rel="noopener">Graph Wavelet Compressed Sensing (GWCS)</a> paper at <a href="https://www.siam.org/conferences-events/siam-conferences/sdm26/" target="_blank" rel="noopener">SIAM SDM 2026</a> (Salt Lake City, Utah).</li>
-          <li><span class="news-date">Oct. 26, 2026:</span> Ph.D. dissertation proposal defense.</li>
-          <li><span class="news-date">Oct. 23–25, 2026:</span> Invited talk at the <a href="https://siamnnp2026.sciencesconf.org/" target="_blank" rel="noopener">SIAM NY–NJ–PA Annual Meeting 2026</a> (Rutgers University, New Brunswick, NJ), in the minisymposium “Geometry for Modern AI: Representations, Reasoning, and Learning on Structured Manifolds.”</li>
+          <li><span class="news-date">Oct. 26, 2026:</span> Successfully defended my Ph.D. dissertation proposal, “Geometric and Multiscale Learning of Structured Data and Dynamical Systems,” and advanced to Ph.D. candidacy.</li>
+          <li><span class="news-date">Oct. 24, 2026:</span> Gave an invited talk on <a href="https://arxiv.org/abs/2610.15760" target="_blank" rel="noopener">HyperForecast</a> at the <a href="https://siamnnp2026.sciencesconf.org/" target="_blank" rel="noopener">SIAM NY–NJ–PA Annual Meeting 2026</a> (Rutgers University, New Brunswick, NJ), in the minisymposium “Geometry for Modern AI: Representations, Reasoning, and Learning on Structured Manifolds.”</li>
+          <li><span class="news-date">Oct. 2026:</span> Received a reviewer certificate of appreciation for reviewing at the IEEE International Conference on Systems, Man, and Cybernetics (SMC 2026).</li>
+          <li><span class="news-date">Oct. 11, 2026:</span> Our <a href="https://arxiv.org/abs/2610.15760" target="_blank" rel="noopener">HyperForecast</a> paper, “Hyperbolic Time Series Forecasting with Learnable Decomposition and Manifold Dynamics,” is now on arXiv.</li>
           <li><span class="news-date">Aug. 14, 2026:</span> Our <a href="https://doi.org/10.1029/2025JH001207" target="_blank" rel="noopener">Solar active-region emergence forecasting paper</a> was published in <em>JGR: Machine Learning and Computation</em> and featured in <a href="https://news.njit.edu/new-ai-model-detects-hidden-signs-solar-eruptions-hours-they-emerge" target="_blank" rel="noopener">NJIT News</a>.</li>
           <li><span class="news-date">July 11, 2026:</span> Our <a href="https://openreview.net/forum?id=JDlHn6Njzm" target="_blank" rel="noopener">Graph Wavelet Compressed Sensing (GWCS)</a> paper was accepted at <a href="https://www.siam.org/conferences-events/siam-conferences/sdm26/" target="_blank" rel="noopener">SIAM SDM 2026</a> (co-first author).</li>
           <li><span class="news-date">May 9, 2026:</span> Presented a poster on Hierarchical Mamba (HiM) at the Workshop “<a href="https://icerm.brown.edu/program/hot_topics_workshop/htw-26-asm" target="_blank" rel="noopener">Agentic Scientific Computing and Scientific Machine Learning</a>” (ICERM, Brown University, Providence, RI).</li>
